@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Total clicks: 0</span>
+    <!-- <button id="btn">Click me!!</button>     -->
+    <button id="plus">Plus</button>    
+    <button id="minus">Minus</button>    
+</body>
+<script>
+    let counter = 0;
+    // const button = document.getElementById("btn");
+    const plusButton = document.getElementById("plus");
+    const minusButton = document.getElementById("minus");
+    const span = document.querySelector("span");
+    /* function handleClick() {
+        // console.log("I have been clicked!!");
+        counter = counter + 1;
+        span.innerText = `Total clicks: ${counter}`;
+    } */
+    function handlePlusClick() {
+        counter = counter + 1;
+        span.innerText = `Total clicks: ${counter}`;
+    }
+    function handleMinusClick() {
+        counter = counter - 1;
+        span.innerText = `Total clicks: ${counter}`;
+    }
+    // button.addEventListener("click", handleClick);
+    plusButton.addEventListener("click", handlePlusClick);
+    minusButton.addEventListener("click", handleMinusClick);
+</script>
+</html>
