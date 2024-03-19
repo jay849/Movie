@@ -13,8 +13,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
-        /* function Btn(props) {
-            console.log(props);
+        function SaveBtn() {
             return (
                 <button
                     style={{
@@ -23,28 +22,24 @@
                         padding: "10px 20px",
                         border: 0,
                         borderRadius: 10,
-                        fontSize: props.big ? 18 : 16,
                     }}
                 >
-                    {props.text}
+                    Save Changes
                 </button>
             );
         }
- */
-        function Btn({ text, big }) {
-            console.log(text, big);
+        function ConfirmBtn() {
             return (
                 <button
                     style={{
-                        backgroundColor: big ? "tomato" : "green",
+                        backgroundColor: "tomato",
                         color: "white",
                         padding: "10px 20px",
                         border: 0,
                         borderRadius: 10,
-                        fontSize: big ? 30 : 16,
                     }}
                 >
-                    {text}
+                    Confirm
                 </button>
             );
         }
@@ -52,8 +47,8 @@
         function App() {
             return (
                 <div>
-                    <Btn text="Save Change" big={true} />
-                    <Btn text="continue" big={false} />
+                    <SaveBtn />
+                    <ConfirmBtn />
                 </div>
             );
         }
