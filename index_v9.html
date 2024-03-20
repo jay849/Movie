@@ -13,18 +13,35 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
-        function Btn({ text, changeValue }) {
-            console.log(text, "was rendered");
+        /* function Btn(props) {
+            console.log(props);
             return (
                 <button
-                    onClick={changeValue}
                     style={{
                         backgroundColor: "tomato",
                         color: "white",
                         padding: "10px 20px",
                         border: 0,
                         borderRadius: 10,
-                        fontSize: 20,
+                        fontSize: props.big ? 18 : 16,
+                    }}
+                >
+                    {props.text}
+                </button>
+            );
+        }
+ */
+        function Btn({ text, big }) {
+            console.log(text, big);
+            return (
+                <button
+                    style={{
+                        backgroundColor: big ? "tomato" : "green",
+                        color: "white",
+                        padding: "10px 20px",
+                        border: 0,
+                        borderRadius: 10,
+                        fontSize: big ? 30 : 16,
                     }}
                 >
                     {text}
@@ -33,12 +50,10 @@
         }
 
         function App() {
-            const [value, setValue] = React.useState("Save Changes");
-            const changeValue = () => setValue("Revert Changes");
             return (
                 <div>
-                    <Btn text={value} changeValue={changeValue} />
-                    <Btn text="continue" />
+                    <Btn text="Save Change" big={true} />
+                    <Btn text="continue" big={false} />
                 </div>
             );
         }
